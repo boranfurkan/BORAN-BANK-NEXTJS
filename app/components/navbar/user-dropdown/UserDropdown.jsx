@@ -1,20 +1,26 @@
 "use client"
-
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, User } from "@nextui-org/react";
-import manPng from "../../../../public/man.png"
+import Link from "next/link"
+import { FaRegUserCircle } from 'react-icons/fa';
+import { BsBank } from 'react-icons/bs'
+import { BiLineChart, BiLogOut } from 'react-icons/bi'
+import { MdQuestionAnswer } from 'react-icons/md'
+import { FaMoneyBillTransfer } from 'react-icons/fa6'
+import { AiFillSetting } from 'react-icons/ai'
+
 export default function UserDropdown() {
     return (
-
-        <Dropdown placement="bottom-start">
-            <DropdownTrigger>
+        <Dropdown showArrow placement="bottom-start" backdrop="opaque" >
+            <DropdownTrigger >
                 <User
                     as="button"
                     avatarProps={{
-                        isBordered: true,
+                        isBordered: false,
                         size: "small",
-                        src: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
+                        src: "man.png",
+                        className: "max-lg:w-8 max-lg:h-8 w-11 h-11",
                     }}
-                    className="transition-transform"
+                    className="transition-transform max-width user-img"
                     description="8374582"
                     name="Tony Reichert"
                 />
@@ -23,14 +29,26 @@ export default function UserDropdown() {
                 <DropdownItem key="profile" className="h-14 gap-2">
                     <p className="font-bold">@tonyreichert</p>
                 </DropdownItem>
+                <DropdownItem key="home">
+                    <Link className="flex flex-row gap-2 items-center transition-colors text-tertiary hover:text-primary" href="/"><BsBank className="text-primary" />Home</Link>
+                </DropdownItem>
+                <DropdownItem key="account">
+                    <Link className="flex flex-row gap-2 items-center transition-colors text-tertiary hover:text-primary" href="/account"><FaRegUserCircle className="text-primary" /> Account</Link>
+                </DropdownItem>
+                <DropdownItem key="transfer">
+                    <Link className="flex flex-row gap-2 items-center transition-colors text-tertiary hover:text-primary" href="/transfer"><FaMoneyBillTransfer className="text-primary" /> Transfer</Link>
+                </DropdownItem>
+                <DropdownItem key="investments">
+                    <Link className="flex flex-row gap-2 items-center transition-colors text-tertiary hover:text-primary" href="/investments"><BiLineChart className="text-primary" /> Investments</Link>
+                </DropdownItem>
                 <DropdownItem key="settings">
-                    My Settings
+                    <Link className="flex flex-row gap-2 items-center transition-colors text-tertiary hover:text-primary" href="/settings"><AiFillSetting className="text-primary" /> Settings</Link>
                 </DropdownItem>
                 <DropdownItem key="help_and_feedback">
-                    Help & Feedback
+                    <Link className="flex flex-row gap-2 items-center transition-colors text-tertiary hover:text-primary" href="/contact"><MdQuestionAnswer className="text-primary" /> Contact Us</Link>
                 </DropdownItem>
                 <DropdownItem key="logout" color="primary">
-                    Log Out
+                    <Link className="flex flex-row gap-2 items-center transition-colors text-tertiary hover:text-primary" href="/logout"><BiLogOut className="text-primary" /> Log out</Link>
                 </DropdownItem>
             </DropdownMenu>
         </Dropdown>

@@ -13,7 +13,14 @@ module.exports = {
     extend: {
       colors: {
         primary: '#f28c28',
-      }
+        secondary: '#aa6a2b',
+        tertiary: '#492e13',
+      },
+      maxWidth: {
+        'max-content': 'max-content',
+      },
+      backgroundImage: {
+        'pig-pattern': "url('/pattern.png')"}
     },
   },
   darkMode: "class",

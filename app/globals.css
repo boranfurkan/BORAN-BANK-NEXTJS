@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.max-width {
+  width: max-content;
+}
+
+.max-width > div > span {
+  @apply max-lg:text-xs;
+}
+
+.user-img > span > img{
+  @apply bg-primary object-contain
+}
+
+
+.image-repeat-x {
+  background-repeat: repeat-x;
+}
