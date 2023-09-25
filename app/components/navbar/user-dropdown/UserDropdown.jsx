@@ -7,8 +7,19 @@ import { BiLineChart, BiLogOut } from 'react-icons/bi'
 import { MdQuestionAnswer } from 'react-icons/md'
 import { FaMoneyBillTransfer } from 'react-icons/fa6'
 import { AiFillSetting } from 'react-icons/ai'
+import { useRouter } from 'next/navigation'
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
 
-export default function UserDropdown() {
+export default function UserDropdown({}) {
+    const router = useRouter()
+    async function handleLogout(){
+        const supabase = createClientComponentClient()
+        const { error } = await supabase.auth.signOut()
+
+        if (!error) {
+            router.push('/login')
+        }
+    }
     return (
         <Dropdown showArrow placement="bottom-start" backdrop="opaque" >
             <DropdownTrigger >
@@ -47,8 +58,8 @@ export default function UserDropdown() {
                 <DropdownItem key="help_and_feedback">
                     <Link className="flex flex-row gap-2 items-center transition-colors text-tertiary hover:text-primary" href="/contact"><MdQuestionAnswer className="text-primary" /> Contact Us</Link>
                 </DropdownItem>
-                <DropdownItem key="logout" color="primary">
-                    <Link className="flex flex-row gap-2 items-center transition-colors text-tertiary hover:text-primary" href="/logout"><BiLogOut className="text-primary" /> Log out</Link>
+                <DropdownItem onClick={handleLogout} key="logout" color="primary">
+                    <div className="flex flex-row gap-2 items-center transition-colors text-tertiary hover:text-primary" href="/logout"><BiLogOut className="text-primary" /> Log out</div>
                 </DropdownItem>
             </DropdownMenu>
         </Dropdown>

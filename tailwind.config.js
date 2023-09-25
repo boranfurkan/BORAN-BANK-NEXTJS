@@ -20,7 +20,7 @@ module.exports = {
         'max-content': 'max-content',
       },
       backgroundImage: {
-        'pig-pattern': "url('/pattern.png')"}
+        'pig-pattern': "url('/pattern.jpg')"}
     },
   },
   darkMode: "class",

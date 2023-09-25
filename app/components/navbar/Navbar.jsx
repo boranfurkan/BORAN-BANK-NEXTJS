@@ -7,7 +7,7 @@ import { TbPigMoney } from 'react-icons/tb'
 import { FaMoneyBillTransfer } from 'react-icons/fa6'
 import UserDropdown from "./user-dropdown/UserDropdown"
 
-export default function Navbar() {
+export default async function Navbar() {
     return (
         <>
             <nav className="w-full sticky top-0 z-20 bg-white text-black text-lg max-lg:text-sm ">
@@ -27,7 +27,7 @@ export default function Navbar() {
                         </div>
                     </li>
                     <li className="flex text-tertiary items-center space-x-2">
-                        <UserDropdown />
+                        <UserDropdown/>
                     </li>
                 </ul>
                 <div className="flex flex-col w-full items-center">

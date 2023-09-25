@@ -14,7 +14,6 @@
   @apply bg-primary object-contain
 }
 
-
-.image-repeat-x {
-  background-repeat: repeat-x;
+.Toastify__progress-bar-theme--light {
+  --toastify-color-progress-light: #f28c28
 }

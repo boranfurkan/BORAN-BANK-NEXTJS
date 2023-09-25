@@ -1,6 +1,7 @@
-import AuthForm from "@/app/components/auth-form/AuthForm"
+import LoginForm from "@/app/components/auth-forms/login/LoginForm"
+
 export default function Login() {
     return (
-        <AuthForm />
+        <LoginForm/>
     )
 }
