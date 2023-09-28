@@ -10,7 +10,7 @@ import { AiFillSetting } from 'react-icons/ai'
 import { useRouter } from 'next/navigation'
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
 
-export default function UserDropdown({}) {
+export default function UserDropdown() {
     const router = useRouter()
     async function handleLogout(){
         const supabase = createClientComponentClient()
@@ -18,6 +18,7 @@ export default function UserDropdown({}) {
 
         if (!error) {
             router.push('/login')
+            router.refresh()
         }
     }
     return (
@@ -58,8 +59,8 @@ export default function UserDropdown({}) {
                 <DropdownItem key="help_and_feedback">
                     <Link className="flex flex-row gap-2 items-center transition-colors text-tertiary hover:text-primary" href="/contact"><MdQuestionAnswer className="text-primary" /> Contact Us</Link>
                 </DropdownItem>
-                <DropdownItem onClick={handleLogout} key="logout" color="primary">
-                    <div className="flex flex-row gap-2 items-center transition-colors text-tertiary hover:text-primary" href="/logout"><BiLogOut className="text-primary" /> Log out</div>
+                <DropdownItem key="logout">
+                    <div onClick={handleLogout} className="flex flex-row gap-2 items-center transition-colors text-tertiary hover:text-primary"><BiLogOut className="text-primary" /> Log out</div>
                 </DropdownItem>
             </DropdownMenu>
         </Dropdown>

@@ -17,3 +17,27 @@
 .Toastify__progress-bar-theme--light {
   --toastify-color-progress-light: #f28c28
 }
+
+.btn-primary{
+  @apply
+  text-center
+  px-3 py-2
+  rounded-lg
+  flex justify-center items-center gap-2
+  text-sm
+  bg-primary
+  text-white;
+  width: max-content;
+}
+
+.btn-secondary{
+  @apply
+  text-center
+  px-3 py-2
+  rounded-lg
+  flex justify-center items-center gap-2
+  text-sm
+  bg-tertiary
+  text-white;
+  width: max-content;
+}

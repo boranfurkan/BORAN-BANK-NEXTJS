@@ -43,6 +43,7 @@ export default function LoginForm() {
       if (!error) {
           toast.update(toastLoading, { render: "You are successfully logged in.", type: "success", isLoading: false, autoClose: 5000 });
           router.push('/')
+          router.refresh()
       }
   }
 
@@ -81,7 +82,7 @@ export default function LoginForm() {
                 </button>
               }
               type={isVisible ? "text" : "password"}
-              className="w-full min-w-max my-2"
+              className="w-full max-md:min-w-[12rem] min-w-[16rem] my-2"
               onChange={(e) => setPassword(e.target.value)}
             />
             <Button type={"submit"} color="primary" className="w-full my-2">

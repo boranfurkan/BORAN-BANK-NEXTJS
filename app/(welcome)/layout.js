@@ -1,6 +1,7 @@
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
+import Navbar from "@/app/components/navbar/Navbar";
 
 export default async function DashboardLayout({ children }) {
     const supabase = createServerComponentClient({ cookies })
@@ -12,6 +13,7 @@ export default async function DashboardLayout({ children }) {
 
     return (
         <>
+            <Navbar isForHomeRoute={true}/>
             {children}
         </>
     )

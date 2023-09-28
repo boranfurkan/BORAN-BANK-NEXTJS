@@ -5,7 +5,7 @@ import { EyeSlashFilledIcon } from "../EyeSlashFilledIcon";
 import { useState } from "react";
 import { toast } from 'react-toastify';
 import Image from "next/image";
-import bankImg from "../../../../public/bank.jpg"
+import bankImg from "../../../../public/bank1.jpg"
 import { useRouter } from 'next/navigation'
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
 

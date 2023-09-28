@@ -10,9 +10,13 @@
 .progressBar::-moz-progress-bar {
   background: rgb(170, 106, 43);
 }
+
 .progressBar::-webkit-progress-bar {
   background: transparent;
+  -webkit-background: transparent; /* Add a WebKit prefix for compatibility */
 }
+
 .progressBar::-webkit-progress-value {
   background: rgb(170, 106, 43);
+  -webkit-background: rgb(170, 106, 43); /* Add a WebKit prefix for compatibility */
 }

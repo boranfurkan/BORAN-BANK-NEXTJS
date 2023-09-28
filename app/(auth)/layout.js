@@ -1,6 +1,7 @@
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
+import Navbar from "@/app/components/navbar/Navbar";
 
 export default async function AuthLayout({ children }) {
     const supabase = createServerComponentClient({ cookies })
@@ -12,7 +13,8 @@ export default async function AuthLayout({ children }) {
 
     return (
         <>
-        <div className="w-screen h-screen bg-blur-[10px] bg-pig-pattern bg-repeat bg-[length:350px_350px] fixed -z-50"></div>
+        <Navbar isForHomeRoute={false}/>
+        <div className="w-screen h-screen bg-pig-pattern bg-repeat bg-[length:350px_350px] absolute -z-50"></div>
         {children}
         </>
     )
